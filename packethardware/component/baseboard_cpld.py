@@ -27,7 +27,9 @@ class BaseboardCPLD(Component):
         else:
             self.firmware_version = ""
 
-        self.data = {}
+        self.data = {
+            "smbios": utils.get_smbios_version("smbios_version")
+        }
 
 
     @classmethod
